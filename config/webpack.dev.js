@@ -49,7 +49,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-    devtool: 'cheap-module-source-map',
+    devtool: '#inline-source-map',
 
     /**
      * Options affecting the output of the compilation.
@@ -106,18 +106,6 @@ module.exports = function (options) {
           use: ['style-loader', 'css-loader'],
           include: [helpers.root('src', 'styles')]
         },
-
-        /**
-         * Sass loader support for *.scss files (styles directory only)
-         * Loads external sass styles into the DOM, supports HMR
-         *
-         */
-        {
-          test: /\.scss$/,
-          use: ['style-loader', 'css-loader', 'sass-loader'],
-          include: [helpers.root('src', 'styles')]
-        },
-
       ]
 
     },
